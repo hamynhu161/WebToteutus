@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Tehtävätyylit.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Skriptit.js"></script>
+</head>
+<body>
+<div class="container">
+    <div id="pin-div">
+        <input id="pin" placeholder="pin code" type="password" />
+        <button onclick="checkPin()">login</button>
+    </div>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <span class="navbar-text lable">Aurinko</span>
+        <button type="button" class="btn btn-dark" onclick="naytaSivu()">Etusivu</button>
+        <button type="button" class="btn btn-dark" onclick="naytaSivu()">Yritysesittely</button>
+        <button type="button" class="btn btn-dark" onclick="naytaSivu()">Henkilökunta</button>
+        <button type="button" class="btn btn-dark" onclick="naytaSivu()">Tuotteet</button>
+    </nav>
+
+    <img src="Images/image2.jpg" class="background"/>
+    <br><br><br>
+    
+    <h1 style="text-align: center;"> Tervetuloa asiakkaaille! </h1><br>
+    <br>
+
+    <div class="hidden">
+        <div class="row">
+            <section class="col-md-4">
+                <p>Tarjoamme orkealaatuisia tuotteita, jotka täyttävät asiakkaidemme tiukat laatuvaatimukset.</p>
+                <img src="Images/image7.jpg" style="height: 250px; width: 350px" />
+            </section>
+            <section class="col-md-4">
+                <p>Meiltä löydät kaiken tarvitsemasi, olipa kyseessä sitten tuore elintarvike tai päivittäinen tarve-esine.</p>
+                <img src="Images/image5.jpg" style="height: 250px; width: 350px" />
+            </section>
+            <section class="col-md-4">
+                <p>Tarjoamme tuotteita edulliseen hintaan, joten säästät rahaa tinkimättä laadusta.</p>
+                <img src="Images/image3.jpg" style="height: 250px; width: 350px" />
+            </section>
+        </div>
+    </div>
+    <br>
+    <div id="alue"></div>
+    <br>
+    <footer>
+        <p>&copy; Tilaus Demo Application</p>
+    </footer>
+ 
+</div>
+</body>
+</html>
