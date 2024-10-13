@@ -1,1 +1,30 @@
-[{"id": 1000, "name": "Timo Virtanen"}, {"id": 1001, "name": "Hanna Mäkinen"}, {"id": 1003, "name": "Elias Korhonen"}, {"id": 1004, "name": "Niini Virtanen"}]
+[
+    {
+        "numero": 1, 
+        "kuva": "/Images/icon_person.png",
+        "nimi": "Timo Virtanen",
+        "tehtava": "Toimitusjohtaja",
+        "email": "timo.virtanen@aurinko.fi"      
+    }, 
+    {
+        "numero": 2,
+        "kuva": "/Images/icon_person.png",
+        "nimi": "Hanna Mäkinen",
+        "tehtava": "Markkinointipäälikkö",
+        "email": "hanna.mäkinen@aurinko.fi"
+    }, 
+    {
+        "numero": 3, 
+        "kuva": "/Images/icon_person.png",
+        "nimi": "Elias Korhonen",
+        "tehtava": "Myyjä",
+        "email": "elias.korhonen@aurinko.fi"
+    }, 
+    {
+        "numero": 4, 
+        "kuva": "/Images/icon_person.png",
+        "nimi": "Niini Peloton",
+        "tehtava": "Myyjä",
+        "email": "niini.peloton@aurinko.fi"
+    }
+]
