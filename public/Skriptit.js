@@ -64,6 +64,7 @@ async function naytaHenkilokunta(){
     document.getElementById("main_alue").innerHTML = 
     `<h5>Tässä esittelemme teille tiimimme jäsenet, jotka tekevät yrityksestämme ainutlaatuisen.</h5>`
     
+    //luo taulukko
     var x =`
         <table class="fixed-header">
             <thead>
@@ -80,8 +81,8 @@ async function naytaHenkilokunta(){
     try{
         const response = await fetch("http://localhost:3000/api/henkilokunta")
         const henkilodata = await response.json()
-
-        await henkilodata.map(h => {//loopataan läpi oliot map funktiolla, h on 1 herkkuolio
+        //loopataan läpi oliot map funktiolla, h on 1 henkilöolio
+        await henkilodata.map(h => {
         x += `
             <tr>
                 <td>${h.numero}</td>
@@ -93,9 +94,11 @@ async function naytaHenkilokunta(){
             `    //käytä takamerkeja "`": niiden arvoa tulkita. Jos "'": näytetään vain tekstinä.
         })
 
-        //taulukko päätetään ja renderöidään html elementtin
+        //taulukko päätetään
         x += '</tbody></table>'
-        document.getElementById("main_alue").innerHTML += x
+
+    //renderöidään html elementtin
+    document.getElementById("main_alue").innerHTML += x
     } 
     catch (error) {
         console.error("Error fetching data:" , error)
@@ -122,8 +125,30 @@ async function naytaHenkilokunta(){
             </div>
             <br>
             <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1804.753263753374!2d21.585621277768773!3d63.106103276658416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x467d60f76bd3c21b%3A0x8c2c282ce1a0a362!2sPalosaarentie%201%2C%2065200%20Vaasa!5e0!3m2!1svi!2sfi!4v1728745910428!5m2!1svi!2sfi" width="1100" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen="" loading="lazy">
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1804.753263753374!2d21.585621277768773!3d63.106103276658416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x467d60f76bd3c21b%3A0x8c2c282ce1a0a362!2sPalosaarentie%201%2C%2065200%20Vaasa!5e0!3m2!1svi!2sfi!4v1728745910428!5m2!1svi!2sfi" width="1100" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         `
     }
+
+//Aseta teema tumma tai vaalea
+function asetaTeema(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+}
+
+window.onload = function() {
+    tarkistaJouluteema();
+    const savedTheme = localStorage.getItem('theme') || 'vaalea';
+    asetaTeema(savedTheme);
+}
+
+//valitse erilkoisteema 
+function tarkistaJouluteema() {
+    const now = new Date();
+    const month = now.getMonth();
+    
+    if (month === 11) { 
+        asetaTeema("joulu");
+        document.getElementById("kuva").innerHTML = `<img src="Images/image8.jpg" class="background"/>`
+    }
+}

@@ -19,7 +19,7 @@ app.get('/api/getpin', async(req, res) => {
         const savedPin = await fs.readFile('./pin.txt', 'utf-8')
 
         //send the file content as the response
-        res.json(savedPin);
+        res.send(savedPin);
     } catch (error) {
         console.error('Error reading file:', error)
         res.status(500).send('Internal Server Error')
