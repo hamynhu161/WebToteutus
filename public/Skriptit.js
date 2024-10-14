@@ -13,7 +13,7 @@ function logOut(){
 //pin koodi tarkistus
 async function checkPin() {
     var pin = document.getElementById("pin").value
-    const response = await fetch("http://localhost:3000/api/getpin")
+    const response = await fetch("https://webtoteutus.onrender.com/api/getpin")
     const correctPin = await response.json()
     
     if(pin == correctPin){
@@ -79,7 +79,7 @@ async function naytaHenkilokunta(){
             <tbody>
         `
     try{
-        const response = await fetch("http://localhost:3000/api/henkilokunta")
+        const response = await fetch("https://webtoteutus.onrender.com/api/henkilokunta")
         const henkilodata = await response.json()
         //loopataan läpi oliot map funktiolla, h on 1 henkilöolio
         await henkilodata.map(h => {
