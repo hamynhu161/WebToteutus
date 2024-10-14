@@ -53,7 +53,7 @@ function naytaYrityksesta(){
                 <img src="Images/image5.jpg" style="height: 250px; width: 350px" />
             </section>
             <section class="col-md-4">
-                <p>Tarjoamme tuotteita edullisesti. Laadukkaat tuotteemme täyttävät tiukat vaatimukset ja sopivat budjettiisi.</p>
+                <p>Laadukkaat tuotteemme täyttävät tiukat vaatimukset ja sopivat budjettiisi.</p>
                 <img src="Images/image3.jpg" style="height: 250px; width: 350px" />
             </section>
         </div>
@@ -152,3 +152,25 @@ function tarkistaJouluteema() {
         document.getElementById("kuva").innerHTML = `<img src="Images/image8.jpg" class="background"/>`
     }
 }
+
+//chatti 
+const socket = io();
+const form = document.getElementById("form");
+const input = document.getElementById("input");
+const messages = document.getElementById("messages");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();         //estää sivun päivittämiseen
+    if(input.value){
+        socket.emit("chat message", input.value);  //kun formi on lähetetty emitoidaan palvelimelle viesti ninikkeellä "chat message"
+        input.value = "";
+    }
+});
+
+// Kuuntele palvelun viestejä
+socket.on("chat message", (msg) => {
+    const item = document.createElement("li");
+    item.textContent = msg;
+    messages.appendChild(item);
+    window.scrollTo(0, document.body.scrollHeight);
+});

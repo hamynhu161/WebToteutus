@@ -4,7 +4,7 @@
       margin: 0 auto;
       padding: 20px;
 }
-.background{
+.background{ 
     height: 600px; 
     width: 100%; 
     background-size: cover;
@@ -13,7 +13,7 @@ h1 {
     text-align: center;
 }
 h2{
-    color: rgb(170, 70, 12) !important;
+    color: rgb(218, 87, 12) !important;
     font-weight: bold !important; 
 }
 
@@ -52,6 +52,7 @@ body {
 
 #main_alue{
     padding: 20px;
+    max-width: 1200px;
 }
   
 .fixed-header {
@@ -66,21 +67,77 @@ body {
     border: 1px solid #dadf99; 
 }
 
-/* Header styles */
+/* Table styles */
 .fixed-header th {
     background-color: rgb(124, 79, 68); 
     color: #f3cebd; 
 }
 
-/* Row styles */
 .fixed-header tr:nth-child(even) {
     background-color: #c4c1be; 
 }
 
-/* Add styles for images in the table */
 .fixed-header img {
     width: 70px; 
     height: auto; 
     display: block; 
     margin: auto; 
 }
+
+ /* Add styles for chatbox */
+.chat {
+width: fit-content; 
+border: 1px solid #ccc;
+border-radius: 5px; 
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+overflow: hidden; /* Hide overflow */
+font-family: Arial, sans-serif; 
+float: right;
+}
+
+.chat h5 {
+    background-color: #837770; 
+    color: white; 
+    padding: 5px; 
+    margin: 0; 
+    text-align: center; 
+}
+
+#messages {
+    list-style:none; /* Remove bullets */
+    margin: 0; 
+    padding: 0; 
+    height: 70px; /* Fixed height for scrolling */
+    overflow-y: auto; /* Enable vertical scroll */
+    background-color: #f9f9f9; 
+}
+#messages li {
+    padding: 5px;
+    color: #837770;
+}
+
+#form {
+    display: flex; 
+    padding: 5px; 
+    background-color: #fff; 
+    width: 200px;
+}
+
+#input {
+    flex-grow: 1; /* Allow input to take up remaining space */
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    margin-right: 3px; 
+    width: 50px;
+}
+
+#submit {
+    background-color: #837770; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    padding: 3px;
+    cursor: pointer; 
+}
+
